@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using TodoListData.Entities;
 
 namespace TodoListData.Repository
 {
-    public class TodoListData<T> : ITodoListData<T>
+    public class TodoListData<T> : ITodoListData<T> where T : class
     {
         public TodoListContext _db;
 
@@ -18,27 +19,29 @@ namespace TodoListData.Repository
         }
         public void Add(T todoList)
         {
-            _db.Set<TodoListContext>().Add(todoList);
+            _db.Set<T>().Add(todoList);
         }
 
         public void Delete(T todoList)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Remove(todoList);
         }
 
         public T Get(int id)
         {
-            throw new NotImplementedException();
+            var todoList = _db.Set<T>().Find(id);
+            return todoList;
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().ToList();
         }
 
         public void Update(T todoList)
         {
-            throw new NotImplementedException();
+            var entry = _db.Entry(todoList);
+            entry.State = EntityState.Modified;
         }
     }
 }
