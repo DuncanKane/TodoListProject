@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TodoListData.Context;
+using TodoListData.Entities;
 
 namespace TodoListData.Repository
 {
-    class TodoListData<T> : ITodoListData<T>
+    public class TodoListData<T> : ITodoListData<T>
     {
+        public TodoListContext _db;
+
+        public TodoListData(TodoListContext db)
+        {
+            _db = db;
+        }
         public void Add(T todoList)
         {
-            throw new NotImplementedException();
+            _db.Set<TodoListContext>().Add(todoList);
         }
 
         public void Delete(T todoList)
