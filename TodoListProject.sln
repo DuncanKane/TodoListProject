@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.Web", "TodoList.Web\TodoList.Web.csproj", "{99BD04FC-0E75-4851-A5C4-A7FCA9FEBD7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListData", "TodoListData\TodoListData.csproj", "{8F2101B0-DBE7-4351-89DB-E0447CE12478}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.Data", "TodoListData\TodoList.Data.csproj", "{8F2101B0-DBE7-4351-89DB-E0447CE12478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoListCore", "TodoListCore\TodoListCore.csproj", "{300B59AF-E3F4-4C19-A1E2-5CB0801485ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.Core", "TodoListCore\TodoList.Core.csproj", "{300B59AF-E3F4-4C19-A1E2-5CB0801485ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
