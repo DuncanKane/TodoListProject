@@ -12,7 +12,7 @@ namespace TodoListData.Entities
     {
         [Key]
         public int ItemId { get; set; }
-        [ForeignKey]
+        [ForeignKey("TodoTask")]
         public int Id { get; }
         public ICollection<TodoTask> TodoTask { get; set; }
     }
